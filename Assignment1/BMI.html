@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Body Mass Index</title>
+<script>
+"use strict";
+//Function to calculate the BMI of a person//
+function BMI() {
+  var weight, height, bmi, result;
+	weight = Number(document.getElementById("id1").value);
+	height = Number(document.getElementById("id2").value);
+	bmi = weight/ (height * height);
+	document.getElementById("bmi").value = bmi.toFixed(2);
+
+if(bmi < 18.5) {
+     result = "Your BMI is "+ bmi + ". You are underweight. You need to eat more healthy foods.";
+	 document.getElementById("id3").innerHTML = result;
+	 }
+else if(bmi >= 18.5 && bmi <= 25) {
+     result = "Your BMI is "+ bmi + ". You are in a very good shape. Enjoy you're beautiful life";
+	 document.getElementById("id3").innerHTML = result;
+	 }
+	 else if(bmi > 25 && bmi <=30) {
+     result = "Your BMI is "+ bmi + ". You are overweight. Time to join the Jim";
+	 document.getElementById("id3").innerHTML = result;
+	 }
+	 else {
+     result = "Your BMI is "+ bmi + ". You are obese. You need to take proper treatment and health died also proper workout.It's heightime";
+	 document.getElementById("id3").innerHTML = result;
+	 }
+
+
+}
+</script>
+</head>
+
+<body>
+
+<h1>Check your BMI</h1>
+
+<p>
+Give Weight in KG and Height in Meter.
+</p>
+
+<p>
+Weight: <input id="id1" type="number">
+Height: <input id="id2" type="number">
+<input type="button" value="calculate" onclick="BMI()" >
+<p>
+BMI: <input id="bmi" type="text" disabled>
+</p>
+<p id="id3"></p>
+</p>
+
+</body>
+</html>
